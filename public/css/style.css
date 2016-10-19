@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.main-container{
+  background-color: #161616;
+  height: 100%;
+}
+.action-area{
+    color: #fff;
+    font-family: 'Helvetica';
+    font-size: 2em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: #f56;
+    padding: 1em;
+    clear: both;
+}
+
+button{
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+button.danger{
+  border-color: #f88;
+  background-color: #f56;
+  color: #eee;
+}
