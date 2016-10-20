@@ -12,8 +12,15 @@
   <div class="main-container">
     <div class="action-area">
       <button id="btnMy" class="danger">Shutdown My Computer</button>
+      <button  class="command-btn" data-command="netstat">NetStat</button>
+      <button  class="command-btn" data-command="ifconfig">Ifconfig</button>
+      <button  class="command-btn" data-command="net:view">Show Network</button>
+      <button id="clearOutput">Clear</button>
       <!-- <button id="btnRemote">Shutdown Remote Computer</button> -->
     </div>
+    <pre id="webOutput">
+
+    </pre>
 
   </div>
   <script src="assets/js/app.js"></script>

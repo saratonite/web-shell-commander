@@ -9,7 +9,7 @@ html,body{
   width: 100%;
 }
 .main-container{
-  background-color: #161616;
+  background-color: #16161e;
   height: 100%;
 }
 .action-area{
@@ -17,14 +17,24 @@ html,body{
     font-family: 'Helvetica';
     font-size: 2em;
     margin: 0;
-    position: absolute;
+    position: relative;
+    /*position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     color: #f56;
     padding: 1em;
-    clear: both;
+    clear: both;*/
+}
+
+#webOutput{
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ddd;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 button{

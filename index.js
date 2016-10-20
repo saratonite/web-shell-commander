@@ -2,6 +2,7 @@ var express = require('express')
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var commandSelect = require('./core/commandSelect');
 
 
 var spawn = require( 'child_process' ).spawn;
@@ -17,16 +18,24 @@ io.on('connection', function(socket){
   console.log('a user connected');
 
   // Shutdown me
-  socket.on('shutdown:me',function(data){
+  socket.on('command:run',function(data){
     console.log(data);
-    // Exec
-    var ls = spawn( 'shutdown', ['/s','/f'] );
+    var exeCmd = commandSelect(data);
+    if(exeCmd){
 
-    ls.stdout.on( 'data', data => {
-    console.log( `stdout: ${data}` );
-    var outputScreen = `stdout: ${data}`;
-    socket.emit('output',{result:outputScreen});
-    });
+      // Exec
+      var ls = spawn( exeCmd.command,exeCmd.params);
+
+      ls.stdout.on( 'data', data => {
+      console.log( `stdout: ${data}` );
+      //var outputScreen = `stdout: ${data}`;
+      var outputScreen = `${data}`;
+      socket.emit('output',{result:outputScreen});
+
+      });
+
+    }
+
 
   });
 
