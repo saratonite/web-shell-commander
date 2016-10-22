@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',function(){
   var clearOutput = document.getElementById('clearOutput');
 
   btn.addEventListener('click',function(){
-    socket.emit('command:run',{'shutdown':'ls'});
+    socket.emit('command:run',{'command':'shutdown'});
   });
 
   clearOutput.addEventListener('click',function(){
